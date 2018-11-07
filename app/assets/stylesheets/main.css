@@ -1,0 +1,17 @@
+.main {
+  width: 400px;
+  margin: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+  text-align: left;
+}
+
+li {
+  border: 1px solid #ddd;
+  padding: 10px;
+}

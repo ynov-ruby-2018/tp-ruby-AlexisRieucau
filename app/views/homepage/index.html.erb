@@ -1,0 +1,16 @@
+<div class="main">
+  <%= "Hello #{current_user.email}" %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <%= form_tag homepage_index_path, method: :post do %>
+    <%= text_area_tag 'comment', nil %>
+    <br />
+    <%= submit_tag "Save" %>
+  <% end %>
+
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.content %> <br />
+      Ecrit par <%= @users.find(comment.user_id).email %></li>
+    <% end %>
+  </ul>
+</div>
