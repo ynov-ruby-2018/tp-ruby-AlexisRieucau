@@ -2,7 +2,7 @@
   <%= "Hello #{current_user.email}" %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
   <%= form_tag homepage_index_path, method: :post do %>
-    <%= text_area_tag 'comment', nil %>
+    <%= text_area_tag 'comment', nil %> <!-- Il faut aussi préciser la colonne, par Ex: comment[content]-->
     <br />
     <%= submit_tag "Save" %>
   <% end %>
@@ -11,6 +11,7 @@
     <% @comments.each do |comment| %>
       <li><%= comment.content %> <br />
       Ecrit par <%= @users.find(comment.user_id).email %></li>
+    <!-- user.id va retourner un Integer... impossible de lui demander un User derrière -->
     <% end %>
   </ul>
 </div>
